@@ -52,9 +52,4 @@ public class Student extends Users implements Comparator<Student>, Enrollable {
         // can only drop one course at a time
         return null;
     }
-
-
-
-
-
 }

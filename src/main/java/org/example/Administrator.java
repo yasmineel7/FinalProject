@@ -10,7 +10,7 @@ public class Administrator {
         super();
     }
 
-    private static LinkedList<String> readTranscript(String path) {
+    private static LinkedList<Student> readTranscript(String path) {
         //TODO: read the transcript odf the students
         return null;
     }

@@ -1,4 +1,5 @@
 package org.example;
 
-public class ComplementaryCourse {
+public class ComplementaryCourse extends Course{
+    protected String code;
 }

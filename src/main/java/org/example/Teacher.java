@@ -1,4 +1,28 @@
 package org.example;
 
-public class Teacher {
+import java.util.List;
+
+public class Teacher extends Users{
+    private List<Integer> grades;
+
+    public Teacher(String name, int id, List<Integer> grades) {
+        super();
+        this.grades = grades;
+    }
+
+    public Teacher(List<Integer> grades) {
+        this.grades = grades;
+    }
+
+    @Override
+    void PrintDetail() {
+        //TODO: print the details of the teacher
+        super.PrintDetail();
+    }
+
+    public static double calculateAverage(List<Integer> grades) {
+        //TODO: calculate the average of each student
+
+        return 0;
+    }
 }

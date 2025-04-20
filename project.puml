@@ -1,0 +1,69 @@
+@startuml
+class org.example.Student {
++ String email
++ void enroll(Student)
+~ void PrintDetail()
++ int compare(Student,Student)
+- {static} LinkedList<Student> readTranscript(String)
+- {static} void writeTranscript(String,LinkedList<Student>)
++ {static} LinkedList<Course> register()
++ void displayCourses(Set<Course>,Set<Course>)
++ {static} LinkedList<Course> drop()
+}
+
+
+class org.example.ComplementaryCourse {
+# String code
++ int compareTo(Course)
+}
+
+
+class org.example.MandatoryCourse {
+# String code
++ int compareTo(Course)
+}
+
+
+class org.example.Teacher {
+- List<Integer> grades
+~ void PrintDetail()
++ {static} double calculateAverage(List<Integer>)
+}
+
+
+class org.example.Course {
+# Set<Course> courses
++ {static} double calculateFee()
++ int compareTo(Course)
+}
+
+
+interface org.example.Enrollable {
+~ void enroll(Student)
+}
+
+class org.example.Main {
++ {static} void main(String[])
+}
+
+class org.example.Administrator {
+- {static} LinkedList<Student> readTranscript(String)
+}
+
+abstract class org.example.Users {
+# String name
+# int id
+~ void PrintDetail()
+}
+
+
+
+
+java.util.Comparator <|.. org.example.Student
+org.example.Enrollable <|.. org.example.Student
+org.example.Users <|-- org.example.Student
+org.example.Course <|-- org.example.ComplementaryCourse
+org.example.Course <|-- org.example.MandatoryCourse
+org.example.Users <|-- org.example.Teacher
+org.example.Comparable <|.. org.example.Course
+@enduml

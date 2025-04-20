@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class Student extends Users implements Comparator<Student>, Enrollable {
     public String email;
@@ -40,6 +41,10 @@ public class Student extends Users implements Comparator<Student>, Enrollable {
     public static LinkedList<Course> register() {
         //TODO: register for complementary and mandatory course
         return null;
+    }
+
+    public void displayCourses(Set<Course> complementaryCourses, Set<Course> mandatoryCourse) {
+        //TODO: combine 2 sets of course to display all the courses registered by the student
     }
 
     public static LinkedList<Course> drop() {

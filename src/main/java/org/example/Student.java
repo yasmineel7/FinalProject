@@ -37,4 +37,17 @@ public class Student extends Users implements Comparator<Student>, Enrollable {
         //TODO: write the transcript using TextIO
     }
 
+    public static LinkedList<Course> register() {
+        //TODO: register for complementary and mandatory course
+        return null;
+    }
+
+    public static LinkedList<Course> drop() {
+        //TODO: drop for complementary and mandatory course
+        // can only drop one course at a time
+        return null;
+    }
+
+
+
 }

@@ -3,7 +3,6 @@ package org.example;
 import java.util.Set;
 
 public class Course implements Comparable<Course>{
-
     protected Set<Course> courses;
 
     public static double calculateFee() {

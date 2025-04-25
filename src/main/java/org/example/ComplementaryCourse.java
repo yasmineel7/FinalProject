@@ -1,7 +1,8 @@
 package org.example;
 
 public class ComplementaryCourse extends Course{
-    protected String code;
+    private String code;
+
 
     @Override
     public int compareTo(Course o) {

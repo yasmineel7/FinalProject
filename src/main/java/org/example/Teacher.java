@@ -21,10 +21,23 @@ public class Teacher extends Users{
         super.PrintDetail();
     }
 
+    /**
+     * calculate the average grade of the student
+     * @param grades the input list of grades
+     * @return the average of the grades
+     */
     public static double calculateAverage(List<Integer> grades) {
-        //TODO: calculate the average of each student
+        if (grades.isEmpty()) {
+            return 0;
+        }
 
-        return 0;
+        double sum = 0;
+        double avg;
+        for (int i = 0; i < grades.size(); i++) {
+            sum += grades.get(i);
+        }
+         avg = sum / grades.size();
+        return avg;
     }
 
     @Override
@@ -44,7 +57,7 @@ public class Teacher extends Users{
     public String toString() {
         return "Teacher{" +
                 "grades=" + grades +
-                '}';
+                '}'+ super.toString();
     }
 
     public List<Integer> getGrades() {

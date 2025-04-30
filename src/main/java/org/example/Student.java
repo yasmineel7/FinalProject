@@ -14,9 +14,6 @@ public class Student extends Users implements Comparator<Student> {
         this.email = email;
     }
 
-
-
-
     @Override
     void PrintDetail() {
         //TODO:print the information of the student
@@ -64,7 +61,6 @@ public class Student extends Users implements Comparator<Student> {
                 fw.write(student.getId() + ",");
                 fw.write(student.getEmail() + "\n");
             }
-            System.out.println("etudiant ajoute");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

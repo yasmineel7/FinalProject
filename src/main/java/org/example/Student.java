@@ -31,7 +31,6 @@ public class Student extends Users implements Comparator<Student> {
     }
 
     public static List<Student> readTranscript(String path) {
-        //TODO: use TextIO to te read the transcript
         List<Student> students = new ArrayList<>();
         File file = new File(path);
         try  {
@@ -58,7 +57,6 @@ public class Student extends Users implements Comparator<Student> {
     }
 
     public static void writeTranscript(String path, List<Student> students) {
-        //TODO: write the transcript using TextIO
         File file = new File(path);
         try (FileWriter fw = new FileWriter(file, true)) {
             for (Student student : students) {

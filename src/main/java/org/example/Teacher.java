@@ -17,7 +17,6 @@ public class Teacher extends Users{
 
     @Override
     void PrintDetail() {
-        //TODO: print the details of the teacher
         super.PrintDetail();
     }
 

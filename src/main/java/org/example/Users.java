@@ -17,7 +17,7 @@ public abstract class Users {
     }
 
     void PrintDetail() {
-
+        toString();
     }
 
     @Override

@@ -29,7 +29,7 @@ public class TestTeacher {
 
     @Test
     public void TestCalculateAverage2() {
-        List<Integer> grades = Arrays.asList(77, 66, 78, 81, -44);
+        List<Integer> grades = Arrays.asList(77, 66, 78, 81, - 44);
 
         double expected = (double) (77 + 66 + 78 + 81 - 44) / grades.size();
         double result = Teacher.calculateAverage(grades);

@@ -1,19 +1,29 @@
 package org.example;
 
 import java.util.List;
-import java.util.Objects;
+import java.util.Set;
 
 public class MandatoryCourse extends Course{
-    private String code;
-    private List courses;
+    private Set<Course> MandatoryCourses;
 
-    public MandatoryCourse(String code, List courses) {
-        super();
-        this.code = code;
-        this.courses = courses;
+
+    public MandatoryCourse(String code, String nameCourse, int priceCourse, List<Student> students) {
+        super(code, nameCourse, priceCourse, students);
     }
 
-    public MandatoryCourse() {
+    @Override
+   public void calculateFee(Set<Course> courses) {
+     super.calculateFee(courses);
+    }
+
+    @Override
+    public void enroll(Student s) {
+        //TODO:enroll the student to a course (Complementary or mandatory)
+
+        if(!students.contains(s)) {
+            super.enroll(s);
+            System.out.println("added Student34222");
+        }
 
     }
 
@@ -23,39 +33,4 @@ public class MandatoryCourse extends Course{
         return super.compareTo(o);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        MandatoryCourse that = (MandatoryCourse) o;
-        return Objects.equals(code, that.code) && Objects.equals(courses, that.courses);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(code, courses);
-    }
-
-    @Override
-    public String toString() {
-        return "MandatoryCourse{" +
-                "code='" + code + '\'' +
-                ", courses=" + courses +
-                '}';
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public List getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List courses) {
-        this.courses = courses;
-    }
 }

@@ -23,10 +23,15 @@ public class Student extends Users implements Comparator<Student> {
 
     @Override
     public int compare(Student o1, Student o2) {
-        //TODO:sort the information of the student using id, name, email and courses
+        //TODO: compare students
         return 0;
     }
 
+    /**
+     * read the transcript of the student
+     * @param path the input path of the file
+     * @return the list of students
+     */
     public static List<Student> readTranscript(String path) {
         List<Student> students = new ArrayList<>();
         File file = new File(path);
@@ -53,6 +58,11 @@ public class Student extends Users implements Comparator<Student> {
         return students;
     }
 
+    /**
+     * write the transcript of the student in a csv file
+     * @param path the input path of the file
+     * @param students the list of students
+     */
     public static void writeTranscript(String path, List<Student> students) {
         File file = new File(path);
         try (FileWriter fw = new FileWriter(file, true)) {
@@ -108,4 +118,27 @@ public class Student extends Users implements Comparator<Student> {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public class StudentComparator implements Comparator<Student> {
+        private String type;
+
+        public StudentComparator(String type) {
+            this.type = type;
+        }
+
+        @Override
+        public int compare(Student o1, Student o2) {
+            switch (type) {
+                case "email" -> o1.getEmail().compareTo(o2.getEmail());
+                case "name" -> o1.getName().compareTo(o2.getName());
+                default -> {
+                    return Integer.compare(o1.getId(), o2.getId());
+                }
+            }
+
+            return 0;
+        }
+    }
+
 }
+

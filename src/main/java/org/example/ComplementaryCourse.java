@@ -16,9 +16,9 @@ public class ComplementaryCourse extends Course{
        super.calculateFee(courses);
     }
 
+
     @Override
     public void enroll(Student s) {
-        //TODO:enroll the student to a course (Complementary or mandatory)
 
         if (!students.contains(s)) {
             super.enroll(s);

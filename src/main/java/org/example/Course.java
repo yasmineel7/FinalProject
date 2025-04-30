@@ -16,6 +16,11 @@ public class Course implements Comparable<Course>{
         this.students = students;
     }
 
+    /**
+     * calculate the fee of each course of the student
+     * depending on if it's a mandatory or complementary course
+     * @param courses the input set of course
+     */
     public void calculateFee(Set<Course> courses) {
         double sum = 0;
         double avg = 0;
@@ -44,8 +49,11 @@ public class Course implements Comparable<Course>{
         return this.code.compareTo(o.code);
     }
 
+    /**
+     * enroll a student to a course
+     * @param s the input student
+     */
     public void enroll(Student s) {
-        //TODO:enroll the student to a course (Complementary or mandatory)
             if(!students.contains(s)) {
                 students.add(s);
                 System.out.println("added Student");

@@ -18,8 +18,6 @@ public class MandatoryCourse extends Course{
 
     @Override
     public void enroll(Student s) {
-        //TODO:enroll the student to a course (Complementary or mandatory)
-
         if(!students.contains(s)) {
             super.enroll(s);
             System.out.println("added Student34222");

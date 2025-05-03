@@ -76,20 +76,12 @@ public class Student extends Users implements Comparator<Student> {
         }
     }
 
-    public static LinkedList<Course> register() {
-        //TODO: register for complementary and mandatory course
-        return null;
-    }
 
     public void displayCourses(Set<Course> complementaryCourses, Set<Course> mandatoryCourse) {
         //TODO: combine 2 sets of course to display all the courses registered by the student
     }
 
-    public static LinkedList<Course> drop() {
-        //TODO: drop for complementary and mandatory course
-        // can only drop one course at a time
-        return null;
-    }
+
 
     @Override
     public boolean equals(Object o) {

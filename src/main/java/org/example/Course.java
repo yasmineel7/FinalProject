@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -59,6 +60,34 @@ public class Course implements Comparable<Course>{
                 System.out.println("added Student");
             }
 
+    }
+
+    /**
+     * remove a student from a course
+     * @param student the input student
+     */
+    public  void drop(Student student) {
+        //TODO: drop for complementary and mandatory course
+        // can only drop one course at a time
+        if (students.contains(student)) {
+            students.remove(student);
+        }
+    }
+
+    public void displayCourses(Set<ComplementaryCourse> complementaryCourses, Set<MandatoryCourse> mandatoryCourse) {
+        //TODO: combine 2 sets of course to display all the courses registered by the student
+        if (complementaryCourses.isEmpty()) {
+            System.out.println(mandatoryCourse);
+        }
+        if (mandatoryCourse.isEmpty()) {
+            System.out.println(complementaryCourses);
+        }
+        //if (complementaryCourses.isEmpty() && mandatoryCourse.isEmpty()) {
+          //  break;
+        //}
+        Set<Course> courses = new HashSet<>(complementaryCourses);
+        courses.addAll(mandatoryCourse);
+        System.out.println(courses);
     }
 
     public String getCode() {

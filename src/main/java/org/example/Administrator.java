@@ -10,8 +10,17 @@ public class Administrator {
         super();
     }
 
-    private static LinkedList<Student> readTranscript(String path) {
-        //TODO: read the transcript odf the students
-        return null;
+    /**
+     * read the transcript of the student
+     * @param path the path of the file
+     * @return the list of students
+     */
+    private static List<Student> readTranscript(String path) {
+        return Student.readTranscript(path);
+    }
+
+    @Override
+    public String toString() {
+        return "Administrator{}" + super.toString();
     }
 }

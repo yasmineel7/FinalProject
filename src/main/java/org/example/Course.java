@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class Course implements Comparable<Course>{
@@ -66,7 +67,7 @@ public class Course implements Comparable<Course>{
      * remove a student from a course
      * @param student the input student
      */
-    public  void drop(Student student) {
+    public void drop(Student student) {
         //TODO: drop for complementary and mandatory course
         // can only drop one course at a time
         if (students.contains(student)) {
@@ -74,20 +75,28 @@ public class Course implements Comparable<Course>{
         }
     }
 
+    /**
+     * display all the courses
+     * @param complementaryCourses the input set of complementary course
+     * @param mandatoryCourse the input set of mandatory course
+     */
     public void displayCourses(Set<ComplementaryCourse> complementaryCourses, Set<MandatoryCourse> mandatoryCourse) {
         //TODO: combine 2 sets of course to display all the courses registered by the student
         if (complementaryCourses.isEmpty()) {
-            System.out.println(mandatoryCourse);
+            for (MandatoryCourse mandatoryCourse1: mandatoryCourse) {
+                System.out.println(mandatoryCourse1);
+            }
         }
         if (mandatoryCourse.isEmpty()) {
-            System.out.println(complementaryCourses);
+            for (ComplementaryCourse complementaryCourse1: complementaryCourses) {
+                System.out.println(complementaryCourse1);
+            }
         }
-        //if (complementaryCourses.isEmpty() && mandatoryCourse.isEmpty()) {
-          //  break;
-        //}
+        if (complementaryCourses.isEmpty() && mandatoryCourse.isEmpty()) {
+            System.out.println("there is no course");
+        }
         Set<Course> courses = new HashSet<>(complementaryCourses);
         courses.addAll(mandatoryCourse);
-        System.out.println(courses);
     }
 
     public String getCode() {
@@ -120,5 +129,27 @@ public class Course implements Comparable<Course>{
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "code='" + code + '\'' +
+                ", nameCourse='" + nameCourse + '\'' +
+                ", priceCourse=" + priceCourse +
+                ", students=" + students +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return priceCourse == course.priceCourse && Objects.equals(code, course.code) && Objects.equals(nameCourse, course.nameCourse) && Objects.equals(students, course.students);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code, nameCourse, priceCourse, students);
     }
 }

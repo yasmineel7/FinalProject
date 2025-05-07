@@ -47,7 +47,6 @@ public class Course implements Comparable<Course>{
 
     @Override
     public int compareTo(Course o) {
-        //TODO: sort the courses (mandatory and complementary) depending on each of their code
         return this.code.compareTo(o.code);
     }
 
@@ -60,7 +59,6 @@ public class Course implements Comparable<Course>{
                 students.add(s);
                 System.out.println("added Student");
             }
-
     }
 
     /**
@@ -68,8 +66,6 @@ public class Course implements Comparable<Course>{
      * @param student the input student
      */
     public void drop(Student student) {
-        //TODO: drop for complementary and mandatory course
-        // can only drop one course at a time
         if (students.contains(student)) {
             students.remove(student);
         }
@@ -81,7 +77,6 @@ public class Course implements Comparable<Course>{
      * @param mandatoryCourse the input set of mandatory course
      */
     public void displayCourses(Set<ComplementaryCourse> complementaryCourses, Set<MandatoryCourse> mandatoryCourse) {
-        //TODO: combine 2 sets of course to display all the courses registered by the student
         if (complementaryCourses.isEmpty()) {
             for (MandatoryCourse mandatoryCourse1: mandatoryCourse) {
                 System.out.println(mandatoryCourse1);

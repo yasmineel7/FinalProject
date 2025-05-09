@@ -19,12 +19,12 @@ public class Student extends Users implements Comparable<Student> {
         return (this.id - o.id) * 1000
                 + this.name.compareTo(o.name) * 10
                 + this.email.compareTo(o.email);
+
     }
 
 
     @Override
     void PrintDetail() {
-        //TODO:print the information of the student
       super.PrintDetail();
       toString();
     }

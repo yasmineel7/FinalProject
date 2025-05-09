@@ -28,7 +28,6 @@ public class MandatoryCourse extends Course{
 
     @Override
     public int compareTo(Course o) {
-        //TODO: sort the courses depending on the code
         return super.compareTo(o);
     }
 

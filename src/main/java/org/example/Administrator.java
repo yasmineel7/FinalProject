@@ -15,7 +15,7 @@ public class Administrator {
      * @param path the path of the file
      * @return the list of students
      */
-    private static List<Student> readTranscript(String path) {
+    public static List<Student> readTranscript(String path) {
         return Student.readTranscript(path);
     }
 

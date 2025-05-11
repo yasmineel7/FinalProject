@@ -23,7 +23,6 @@ public class MandatoryCourse extends Course{
             super.enroll(s);
             System.out.println("added Student34222");
         }
-
     }
 
     @Override

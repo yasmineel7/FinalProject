@@ -22,7 +22,6 @@ public class Student extends Users implements Comparable<Student> {
 
     }
 
-
     @Override
     void PrintDetail() {
       super.PrintDetail();

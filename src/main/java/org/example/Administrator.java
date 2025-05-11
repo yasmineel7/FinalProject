@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Administrator {
 
-
     public Administrator(String name, int id) {
         super();
     }

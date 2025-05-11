@@ -40,7 +40,10 @@ List<Student> students2 = new ArrayList<>();
         MandatoryCourse m = new MandatoryCourse("3sn", "programming", 150, students, "math");
         MandatoryCourse m1 = new MandatoryCourse("3356", "programming1", 170, students, "phys");
         courses.displayCourses(complementaryCourses, mandatoryCourses);
-
+        Administrator.readTranscript("src/main/java/org/example/TranscriptStudent");
+        for (int i = 0; i < students.size();i++) {
+            System.out.println(students.get(i));
+        }
     }
 
 }
